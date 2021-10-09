@@ -42,7 +42,7 @@ def encryption(imgName):
     # print('Decrypted:', decrypted.decode())
 
     im = Image.open(BytesIO(base64.b64decode(decrypted.decode())))
-    im.save(f'{imgName}', 'PNG')
+    im.save(f'assets/imgs-decrypted-test/{imgName}', 'PNG')
 
 for i in os.listdir("assets/imgs-original"):
     encryption(i)
