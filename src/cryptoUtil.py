@@ -1,35 +1,48 @@
+import pyaes
+import pbkdf2
+import binascii
+import os
+import secrets
 import base64
-import hashlib
-from Crypto import Random
-from Crypto.Cipher import AES
+from PIL import Image
+from io import BytesIO
+from urllib.request import urlopen
 
+password = "s3cr3t*c0d3"
 
-class AESCipher(object):
-    def __init__(self, key):
-        self.bs = 32
-        self.key = hashlib.sha256(key.encode()).digest()
+def encryption(imgName):
+    with open(f"assets/imgs-original/{imgName}", "rb") as image_file:
+        data = base64.b64encode(image_file.read())
 
-    def encrypt(self, raw):
-        raw = self._pad(raw)
-        iv = Random.new().read(AES.block_size)
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return base64.b64encode(iv + cipher.encrypt(raw))
+    # # Derive a 256-bit AES encryption key from the password
+    
+    # passwordSalt = os.urandom(16)
+    passwordSalt = b" \x04\xcfn,Nz'}\xae\x01>M\xb3\xd5\x87"
+    print(passwordSalt)
+    # key = pbkdf2.PBKDF2(password, passwordSalt).read(32)
+    key = b'G6\xc5\xc3\x84e \x0c\x93a\x83\x98\xfc\xdf\xc4\x1f3}\xc5p\x17\xde?;\xf6Pf\xc7)7U\xfb'
+    print('AES encryption key:', binascii.hexlify(key))
 
-    def decrypt(self, enc):
-        enc = base64.b64decode(enc)
-        iv = enc[:AES.block_size]
-        cipher = AES.new(self.key, AES.MODE_CBC, iv)
-        return self._unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
+    # Encrypt the plaintext with the given key:
+    #   ciphertext = AES-256-CTR-Encrypt(plaintext, key, iv)
+    # iv = secrets.randbits(256)
+    iv = 62373259168451568559532187460840030189149346872845040756263784518798946831509
+    plaintext = data
+    aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
+    ciphertext = aes.encrypt(plaintext)
+    # print('Encrypted:', binascii.hexlify(ciphertext))
+    with open(f"assets/imgs-encrypted/{imgName}", "wb") as image_enc:
+        image_enc.write(ciphertext)
 
-    def _pad(self, s):
-        return (s + (self.bs - len(s) % self.bs) * chr(self.bs - len(s) % self.bs)).encode('utf-8')
+    with open(f"assets/imgs-encrypted/{imgName}", "rb") as image_enc:
+        img = image_enc.read()
 
-    @staticmethod
-    def _unpad(s):
-        return s[:-ord(s[len(s)-1:])]
+    aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
+    decrypted = aes.decrypt(img)
+    # print('Decrypted:', decrypted.decode())
 
+    im = Image.open(BytesIO(base64.b64decode(decrypted.decode())))
+    im.save(f'{imgName}', 'PNG')
 
-a = AESCipher("vrushank")
-cipher = a.encrypt("temp")
-print(cipher)
-print(a.decrypt(cipher))
+for i in os.listdir("assets/imgs-original"):
+    encryption(i)
