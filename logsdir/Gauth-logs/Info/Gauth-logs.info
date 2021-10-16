@@ -214,3 +214,5 @@
 
 [2021-10-15 18:40:11,638] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
 
+[2021-10-15 18:57:12,760] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
