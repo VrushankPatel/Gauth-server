@@ -1,48 +1,110 @@
-import pyaes
-import pbkdf2
-import binascii
-import os
-import secrets
 import base64
-from PIL import Image
+import binascii
+import datetime
+import json
+import logging
+import os
+import random
+import secrets
+import string
 from io import BytesIO
 from urllib.request import urlopen
 
-password = "s3cr3t*c0d3"
+import cv2
+import numpy as np
+import pbkdf2
+import pyaes
+from autopylogger import init_logging
+from PIL import Image
 
-def encryption(imgName):
-    with open(f"assets/imgs-original/{imgName}", "rb") as image_file:
+ASSET_DIR = "src/assets/"
+IMAGES_ORIGINAL_DIR = ASSET_DIR + "imgs-original"
+IMAGES_ENCRYPTED_DIR = ASSET_DIR + "imgs-encrypted"
+
+logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
+
+
+def encryptImages(ImageHashDb, db, forceEncrypt):
+    unencryptedImages = checkIfImagesAreInSync(forceEncrypt)
+    if not unencryptedImages:        
+        return    
+    logger.info(f"{unencryptedImages} will be encrypted now.")
+    for imgName in unencryptedImages:        
+        encryptImage(ImageHashDb, db, forceEncrypt, imgName)
+
+def checkIfImagesAreInSync(forceEncrypt):
+    originalImages = os.listdir(IMAGES_ORIGINAL_DIR)
+    encryptedImages = os.listdir(IMAGES_ENCRYPTED_DIR)
+    if not originalImages == encryptedImages:
+        logger.warn("Images are not in sync, autoencryption is started..")  
+    else:
+        logger.info("Images are in sync,")
+    if forceEncrypt:
+        logger.warn("Encrypting images forcefully")    
+    unencryptedImages = []
+    if not forceEncrypt and originalImages == encryptedImages:
+        return;
+    unencryptedImages = originalImages if forceEncrypt else set(originalImages).difference(encryptedImages)
+    return unencryptedImages
+
+def encryptImage(ImageHashDb, db, forceEncrypt, imgName):
+    with open(f"{ASSET_DIR}imgs-original/{imgName}", "rb") as image_file:
+        logger.info(f"encrypting {imgName}")
         data = base64.b64encode(image_file.read())
 
-    # # Derive a 256-bit AES encryption key from the password
-    
-    # passwordSalt = os.urandom(16)
-    passwordSalt = b" \x04\xcfn,Nz'}\xae\x01>M\xb3\xd5\x87"
-    print(passwordSalt)
-    # key = pbkdf2.PBKDF2(password, passwordSalt).read(32)
-    key = b'G6\xc5\xc3\x84e \x0c\x93a\x83\x98\xfc\xdf\xc4\x1f3}\xc5p\x17\xde?;\xf6Pf\xc7)7U\xfb'
-    print('AES encryption key:', binascii.hexlify(key))
-
-    # Encrypt the plaintext with the given key:
-    #   ciphertext = AES-256-CTR-Encrypt(plaintext, key, iv)
-    # iv = secrets.randbits(256)
-    iv = 62373259168451568559532187460840030189149346872845040756263784518798946831509
-    plaintext = data
+    logger.info("Generating cryptoSecrets for your image")
+    password = ''.join(random.choice(string.ascii_uppercase + string.ascii_lowercase + string.digits) for _ in range(11))
+    passwordSalt = os.urandom(16)
+    key = pbkdf2.PBKDF2(password, passwordSalt).read(32).decode('unicode-escape').encode('ISO-8859-1')
+    iv = secrets.randbits(256)
     aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
-    ciphertext = aes.encrypt(plaintext)
-    # print('Encrypted:', binascii.hexlify(ciphertext))
-    with open(f"assets/imgs-encrypted/{imgName}", "wb") as image_enc:
-        image_enc.write(ciphertext)
 
-    with open(f"assets/imgs-encrypted/{imgName}", "rb") as image_enc:
+    logger.info("Encrypting image")
+    try:
+        ciphertext = aes.encrypt(data)        
+        logger.info("Storing to cryptoDB")
+        value = ImageHashDb.query.filter(ImageHashDb.img_id == imgName).first()
+        if value:
+            value.iv, value.key = iv, key.decode('unicode-escape')
+        else:
+            value = ImageHashDb(imgName, key.decode('unicode-escape'), iv)            
+        db.session.add(value)
+        logger.info("Committing to cryptoDB")
+        db.session.commit()
+        logger.info(f"Saving encrypted image to {imgName}")
+        with open(f"{ASSET_DIR}imgs-encrypted/{imgName}", "wb") as image_enc:
+            image_enc.write(ciphertext)
+    except Exception as e:
+        print(e)
+        logger.error("Error occured, reEncryption might be required for " + imgName)
+        # encryptImage(ImageHashDb, db, forceEncrypt, imgName)
+    logger.info(f"successfully encrypted image {imgName}")
+
+def getDecryptedImage(ImageHashDB, imgName):
+    cryptoData = ImageHashDB.query.filter(ImageHashDB.img_id == imgName).first()        
+    key = str(cryptoData.key).encode('ISO-8859-1')
+    iv = int(cryptoData.iv)    
+    
+    with open(f"{ASSET_DIR}imgs-encrypted/{imgName}", "rb") as image_enc:
         img = image_enc.read()
 
     aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
-    decrypted = aes.decrypt(img)
-    # print('Decrypted:', decrypted.decode())
+    decrypted = aes.decrypt(img)        
 
-    im = Image.open(BytesIO(base64.b64decode(decrypted.decode())))
-    im.save(f'assets/imgs-decrypted-test/{imgName}', 'PNG')
+    im = Image.open(BytesIO(base64.b64decode(decrypted.decode('ISO-8859-1'))))
+    # im.save(f'{ASSET_DIR}imgs-decrypted-test/{imgName}', 'PNG')
 
-for i in os.listdir("assets/imgs-original"):
-    encryption(i)
+    im_arr = np.asarray(im)
+    _, im_arr = cv2.imencode('.jpg', im_arr)
+    im_bytes = im_arr.tobytes()
+    im_b64 = base64.b64encode(im_bytes)
+    response = {
+        "image": "data:image/png;base64," + decrypted.decode('ISO-8859-1')
+    }
+    return response
+
+def cacheImages(ImageHashDB):
+    imgs = dict()
+    for i in range(len(os.listdir(IMAGES_ENCRYPTED_DIR))):
+        imgs[i] = getDecryptedImage(ImageHashDB, f"{i}.png")
+    return imgs

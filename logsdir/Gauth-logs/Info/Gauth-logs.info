@@ -1,0 +1,216 @@
+[2021-10-13 13:02:39,652] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:06:16,916] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:07:06,970] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:09:36,910] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:10:45,332] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:11:35,993] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- Images are in sync,
+
+[2021-10-13 13:15:48,386] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:19:17,447] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 42 -- Images are in sync,
+
+[2021-10-13 13:20:43,521] -- INFO - cryptoUtil.py -- encryptImages - Line no - 33 -- {'2.png'} will be encrypted now.
+
+[2021-10-13 13:20:43,525] -- INFO - cryptoUtil.py -- encryptImage - Line no - 54 -- encrypting 2.png
+
+[2021-10-13 13:20:43,544] -- INFO - cryptoUtil.py -- encryptImage - Line no - 57 -- Generating cryptoSecrets for your image
+
+[2021-10-13 13:20:43,779] -- INFO - cryptoUtil.py -- encryptImage - Line no - 64 -- Encrypting image
+
+[2021-10-13 13:20:50,581] -- INFO - cryptoUtil.py -- encryptImage - Line no - 67 -- Storing to cryptoDB
+
+[2021-10-13 13:20:51,212] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Committing to cryptoDB
+
+[2021-10-13 13:20:51,743] -- INFO - cryptoUtil.py -- encryptImage - Line no - 76 -- Saving encrypted image to 2.png
+
+[2021-10-13 13:20:51,746] -- INFO - cryptoUtil.py -- encryptImage - Line no - 83 -- successfully encrypted image 2.png
+
+[2021-10-13 13:21:47,629] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 43 -- Images are in sync,
+
+[2021-10-13 13:22:24,700] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 43 -- Images are in sync,
+
+[2021-10-13 13:23:00,237] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:23:50,304] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:25:09,027] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:43:12,437] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:44:35,835] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:45:17,500] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:45:55,558] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:48:27,826] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:53:14,378] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 13:57:35,463] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 14:07:00,866] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 14:07:38,491] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 14:15:31,212] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 14:17:35,736] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 14:20:08,352] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-13 18:27:11,707] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 16:48:25,552] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 16:49:23,412] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 16:50:58,885] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 16:51:22,741] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 16:52:17,692] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 17:19:12,449] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 17:19:50,926] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 17:22:39,728] -- INFO - cryptoUtil.py -- encryptImages - Line no - 31 -- {'0.png', '1.png', '2.png', '4.png', '3.png', '5.png'} will be encrypted now.
+
+[2021-10-15 17:22:39,729] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 0.png
+
+[2021-10-15 17:22:39,739] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:22:39,970] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:22:44,931] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:22:45,333] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:22:45,925] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 0.png
+
+[2021-10-15 17:22:45,985] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 0.png
+
+[2021-10-15 17:22:45,987] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 1.png
+
+[2021-10-15 17:22:46,001] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:22:46,185] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:22:52,801] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:22:53,303] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:22:53,915] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 1.png
+
+[2021-10-15 17:22:53,920] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 1.png
+
+[2021-10-15 17:22:53,996] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 2.png
+
+[2021-10-15 17:22:54,016] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:22:54,237] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:00,737] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:01,150] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:23:01,594] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 2.png
+
+[2021-10-15 17:23:01,599] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 2.png
+
+[2021-10-15 17:23:01,622] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 4.png
+
+[2021-10-15 17:23:01,634] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:01,795] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:05,308] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:05,906] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:23:06,261] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 4.png
+
+[2021-10-15 17:23:06,286] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 3.png
+
+[2021-10-15 17:23:06,291] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:06,486] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:10,341] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:10,344] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 3.png
+
+[2021-10-15 17:23:10,416] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 5.png
+
+[2021-10-15 17:23:10,427] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:10,639] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:14,065] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:14,069] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 5.png
+
+[2021-10-15 17:23:28,736] -- INFO - cryptoUtil.py -- encryptImages - Line no - 31 -- {'5.png', '4.png', '3.png'} will be encrypted now.
+
+[2021-10-15 17:23:28,738] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 5.png
+
+[2021-10-15 17:23:28,748] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:28,924] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:32,571] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:33,133] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:23:33,644] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 5.png
+
+[2021-10-15 17:23:33,703] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 5.png
+
+[2021-10-15 17:23:33,706] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 4.png
+
+[2021-10-15 17:23:33,710] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:33,881] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:37,550] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:38,047] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:23:38,660] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 4.png
+
+[2021-10-15 17:23:38,666] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 4.png
+
+[2021-10-15 17:23:38,667] -- INFO - cryptoUtil.py -- encryptImage - Line no - 52 -- encrypting 3.png
+
+[2021-10-15 17:23:38,676] -- INFO - cryptoUtil.py -- encryptImage - Line no - 55 -- Generating cryptoSecrets for your image
+
+[2021-10-15 17:23:38,862] -- INFO - cryptoUtil.py -- encryptImage - Line no - 62 -- Encrypting image
+
+[2021-10-15 17:23:43,099] -- INFO - cryptoUtil.py -- encryptImage - Line no - 65 -- Storing to cryptoDB
+
+[2021-10-15 17:23:43,683] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Committing to cryptoDB
+
+[2021-10-15 17:23:44,293] -- INFO - cryptoUtil.py -- encryptImage - Line no - 74 -- Saving encrypted image to 3.png
+
+[2021-10-15 17:23:44,298] -- INFO - cryptoUtil.py -- encryptImage - Line no - 81 -- successfully encrypted image 3.png
+
+[2021-10-15 17:24:41,428] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 17:25:20,754] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 17:27:04,979] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 18:27:44,508] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 18:29:38,680] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 18:36:16,318] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+
+[2021-10-15 18:40:11,638] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 41 -- Images are in sync,
+

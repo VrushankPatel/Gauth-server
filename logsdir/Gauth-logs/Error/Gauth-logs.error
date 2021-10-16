@@ -1,0 +1,6 @@
+[2021-10-15 17:23:06,206] -- ERROR - cryptoUtil.py -- encryptImage - Line no - 79 -- Error occured, reEncryption might be required for 4.png
+
+[2021-10-15 17:23:10,343] -- ERROR - cryptoUtil.py -- encryptImage - Line no - 79 -- Error occured, reEncryption might be required for 3.png
+
+[2021-10-15 17:23:14,068] -- ERROR - cryptoUtil.py -- encryptImage - Line no - 79 -- Error occured, reEncryption might be required for 5.png
+
