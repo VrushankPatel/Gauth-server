@@ -28,6 +28,8 @@ class ImageHashDB(db.Model):
         self.key = key
         self.iv = iv        
 
+# encryptImages(ImageHashDB, db, False)
+imgs = cacheImages(ImageHashDB)
 
 @app.route('/api/getImage/<image_id>', methods=['POST'])
 def getImage(image_id):       
@@ -38,7 +40,5 @@ def getImage(image_id):
     return imgs[image_id]       
 
 if __name__ == '__main__':
-    db.create_all()
-    # encryptImages(ImageHashDB, db, False)
-    imgs = cacheImages(ImageHashDB)
+    db.create_all()    
     app.run(debug=True)
