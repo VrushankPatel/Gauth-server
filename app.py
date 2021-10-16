@@ -33,7 +33,7 @@ class ImageHashDB(db.Model):
 def getImage(image_id):       
     image_id = int(image_id)
     image_id = image_id % len(imgs) if image_id > len(imgs)-1 else image_id
-    print(imgs)
+    print(imgs.keys())
     return imgs[image_id]       
 
 if __name__ == '__main__':
