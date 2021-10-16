@@ -17,3 +17,4 @@ pyaes==1.6.1
 six==1.16.0
 SQLAlchemy==1.4.25
 Werkzeug==2.0.2
+gunicorn==19.10.0
