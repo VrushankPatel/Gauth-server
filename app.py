@@ -38,6 +38,6 @@ def getImage(image_id):
 
 if __name__ == '__main__':
     db.create_all()
-    encryptImages(ImageHashDB, db, False)
+    # encryptImages(ImageHashDB, db, False)
     imgs = cacheImages(ImageHashDB)
     app.run(debug=True)
