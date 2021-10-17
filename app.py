@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from config.config import getFirebaseConfig
 from src.cryptoUtil import encryptImages, getDecryptedImage, cacheImages
+from src import constants
 
 app = Flask(__name__)
 
@@ -26,19 +27,24 @@ class ImageHashDB(db.Model):
     def __init__(self, img_id, key, iv):
         self.img_id = img_id        
         self.key = key
-        self.iv = iv        
+        self.iv = iv
 
-# encryptImages(ImageHashDB, db, False)
-imgs = cacheImages(ImageHashDB)
+imgs = {}
+ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
+
+# imgs = cacheImages(ImageHashDB)
 
 @app.route('/api/getImage/<image_id>', methods=['POST'])
-def getImage(image_id):       
+def getImage(image_id):    
     image_id = int(image_id)
-    print(len(imgs))
-    image_id = image_id % len(imgs) if image_id > len(imgs)-1 else image_id
-    print(imgs.keys())
-    return imgs[image_id]       
+    image_id = image_id % ttlImgs if image_id > ttlImgs-1 else image_id
+    if image_id in imgs.keys():
+        return imgs[image_id]
+    else:
+        imgs[image_id] = getDecryptedImage(ImageHashDB, f"{image_id}.png")
+        return imgs[image_id]
 
 if __name__ == '__main__':
+    # encryptImages(ImageHashDB, db, False)
     db.create_all()    
     app.run(debug=True)

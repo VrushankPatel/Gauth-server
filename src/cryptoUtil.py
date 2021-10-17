@@ -16,10 +16,8 @@ import pbkdf2
 import pyaes
 from autopylogger import init_logging
 from PIL import Image
+from . import constants
 
-ASSET_DIR = "src/assets/"
-IMAGES_ORIGINAL_DIR = ASSET_DIR + "imgs-original"
-IMAGES_ENCRYPTED_DIR = ASSET_DIR + "imgs-encrypted"
 
 logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
 
@@ -33,8 +31,8 @@ def encryptImages(ImageHashDb, db, forceEncrypt):
         encryptImage(ImageHashDb, db, forceEncrypt, imgName)
 
 def checkIfImagesAreInSync(forceEncrypt):
-    originalImages = os.listdir(IMAGES_ORIGINAL_DIR)
-    encryptedImages = os.listdir(IMAGES_ENCRYPTED_DIR)
+    originalImages = os.listdir(constants.IMAGES_ORIGINAL_DIR)
+    encryptedImages = os.listdir(constants.IMAGES_ENCRYPTED_DIR)
     if not originalImages == encryptedImages:
         logger.warn("Images are not in sync, autoencryption is started..")  
     else:
@@ -48,7 +46,7 @@ def checkIfImagesAreInSync(forceEncrypt):
     return unencryptedImages
 
 def encryptImage(ImageHashDb, db, forceEncrypt, imgName):
-    with open(f"{ASSET_DIR}imgs-original/{imgName}", "rb") as image_file:
+    with open(f"{constants.ASSET_DIR}imgs-original/{imgName}", "rb") as image_file:
         logger.info(f"encrypting {imgName}")
         data = base64.b64encode(image_file.read())
 
@@ -72,7 +70,7 @@ def encryptImage(ImageHashDb, db, forceEncrypt, imgName):
         logger.info("Committing to cryptoDB")
         db.session.commit()
         logger.info(f"Saving encrypted image to {imgName}")
-        with open(f"{ASSET_DIR}imgs-encrypted/{imgName}", "wb") as image_enc:
+        with open(f"{constants.ASSET_DIR}imgs-encrypted/{imgName}", "wb") as image_enc:
             image_enc.write(ciphertext)
     except Exception as e:
         print(e)
@@ -85,7 +83,7 @@ def getDecryptedImage(ImageHashDB, imgName):
     key = str(cryptoData.key).encode('ISO-8859-1')
     iv = int(cryptoData.iv)    
     
-    with open(f"{ASSET_DIR}imgs-encrypted/{imgName}", "rb") as image_enc:
+    with open(f"{constants.ASSET_DIR}imgs-encrypted/{imgName}", "rb") as image_enc:
         img = image_enc.read()
 
     aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
@@ -105,6 +103,6 @@ def getDecryptedImage(ImageHashDB, imgName):
 
 def cacheImages(ImageHashDB):
     imgs = dict()
-    for i in range(len(os.listdir(IMAGES_ENCRYPTED_DIR))):
+    for i in range(len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))):
         imgs[i] = getDecryptedImage(ImageHashDB, f"{i}.png")
     return imgs
