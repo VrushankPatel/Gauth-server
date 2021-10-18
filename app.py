@@ -7,7 +7,7 @@ from config.config import getFirebaseConfig
 from src.cryptoUtil import encryptImages, getDecryptedImage, cacheImages
 from src import constants
 
-app = Flask(__name__, static_url_path='/build/static', static_folder='build')
+app = Flask(__name__, static_url_path='/graphauth/build/static', static_folder='build')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
