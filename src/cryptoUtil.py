@@ -103,6 +103,8 @@ def getDecryptedImage(ImageHashDB, imgName):
 
 def cacheImages(ImageHashDB):
     imgs = dict()
+    logger.info("Caching Images..")
     for i in range(len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))):
         imgs[i] = getDecryptedImage(ImageHashDB, f"{i}.png")
+        logger.info(f"Caching {i}.png")
     return imgs
