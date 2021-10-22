@@ -1,7 +1,5 @@
 import os
 import urllib
-
-import requests
 from autopylogger import init_logging
 from flask import Flask, request
 from flask_cors import CORS
