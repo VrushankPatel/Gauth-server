@@ -26,8 +26,7 @@ var DrawUtil = {
         var context = canvas.getContext("2d");
         context.clearRect(0, 0, cw, ch);
     },
-    drawPoints: (e, coordinatesSize) => {
-        console.log()
+    drawPoints: (e, coordinatesSize) => {        
         if(coordinatesSize >= 5 || e.button === 2){
             return
         }
@@ -35,8 +34,8 @@ var DrawUtil = {
         const canvas = document.querySelector('canvas');
         const ctx = canvas.getContext('2d');
         const rect = canvas.getBoundingClientRect();
-        console.log(e.clientX);
-        console.log(e.clientY);
+        // console.log(e.clientX);
+        // console.log(e.clientY);
         const pos = {
             x: (e.clientX - rect.left) * canvas.width / canvas.clientWidth,
             y: (e.clientY - rect.top) * canvas.height / canvas.clientHeight,

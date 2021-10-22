@@ -8,3 +8,15 @@
 
 [2021-10-15 17:23:28,732] -- WARNING - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are not in sync, autoencryption is started..
 
+[2021-10-20 09:10:47,547] -- WARNING - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 37 -- Images are not in sync, autoencryption is started..
+
+[2021-10-20 09:13:54,365] -- WARNING - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 37 -- Images are not in sync, autoencryption is started..
+
+[2021-10-20 09:14:42,997] -- WARNING - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 37 -- Images are not in sync, autoencryption is started..
+
+[2021-10-20 09:19:47,388] -- WARNING - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 37 -- Images are not in sync, autoencryption is started..
+
+[2021-10-20 11:31:48,527] -- WARNING - app.py -- getImage - Line no - 44 -- Token is Expired, returning token expired
+
+[2021-10-20 11:36:00,155] -- WARNING - app.py -- getImage - Line no - 44 -- Token is Expired, returning token expired
+

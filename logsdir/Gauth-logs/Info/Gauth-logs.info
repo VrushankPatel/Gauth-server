@@ -326,3 +326,657 @@
 
 [2021-10-18 15:35:23,528] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
 
+[2021-10-19 09:56:44,867] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 09:57:22,430] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-19 09:57:40,859] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-19 09:57:59,250] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-19 09:58:15,103] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-19 09:58:28,376] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-19 09:58:40,037] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-19 09:58:49,116] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-19 09:58:49,131] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 09:58:54,282] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-19 09:59:13,635] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-19 09:59:38,910] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-19 09:59:58,321] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-19 10:00:13,577] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-19 10:00:27,203] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-19 10:00:36,702] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-19 10:00:36,712] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:01:20,302] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:01:44,168] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:02:04,822] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:02:11,239] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:02:44,555] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:03:11,984] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:03:36,807] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:04:33,098] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:04:39,416] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:05:55,649] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:06:47,225] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:06:54,785] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:09:10,015] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:09:41,221] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:09:48,222] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:10:04,720] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:10:23,908] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:10:53,151] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:11:19,088] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:11:38,388] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:12:03,711] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:12:18,245] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:13:34,253] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:13:52,259] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:14:08,582] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:15:32,497] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:15:51,831] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:16:42,066] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:24:23,042] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:24:28,978] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:25:25,866] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-19 10:25:34,711] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-19 10:25:45,617] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-19 10:25:58,335] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-19 10:26:06,382] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-19 10:26:13,680] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-19 10:26:20,426] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-19 10:26:20,434] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:26:25,515] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-19 10:26:39,460] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-19 10:26:56,587] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-19 10:27:09,632] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-19 10:27:15,825] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-19 10:27:23,174] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-19 10:27:29,638] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-19 10:27:29,642] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-19 10:28:30,967] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-19 10:28:40,290] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-19 10:28:46,862] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-19 10:28:53,521] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-19 10:28:58,322] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-19 10:29:02,159] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-19 10:29:06,016] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-19 10:29:06,019] -- INFO - cryptoUtil.py -- checkIfImagesAreInSync - Line no - 39 -- Images are in sync,
+
+[2021-10-20 09:09:49,430] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:10:08,800] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-20 09:10:18,023] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-20 09:10:26,750] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-20 09:10:33,914] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-20 09:10:40,625] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-20 09:10:47,540] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-20 09:10:47,549] -- INFO - cryptoUtil.py -- encryptImages - Line no - 29 -- {'temp'} will be encrypted now.
+
+[2021-10-20 09:13:54,355] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:13:54,366] -- INFO - cryptoUtil.py -- encryptImages - Line no - 29 -- {'0.png', '6.jpg', '10.jpg', '7.jpg', '1.png', '2.png', '4.png', '8.jpg', '9.jpg', '3.png', '5.png'} will be encrypted now.
+
+[2021-10-20 09:13:54,367] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 0.png
+
+[2021-10-20 09:13:54,375] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:13:54,513] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:13:58,708] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:03,336] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:14:03,644] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 0.png
+
+[2021-10-20 09:14:03,646] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 6.jpg
+
+[2021-10-20 09:14:03,651] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:03,716] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:05,270] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:05,328] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 6.jpg
+
+[2021-10-20 09:14:05,331] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 10.jpg
+
+[2021-10-20 09:14:05,336] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:05,401] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:06,794] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:06,801] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 10.jpg
+
+[2021-10-20 09:14:06,802] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 7.jpg
+
+[2021-10-20 09:14:06,805] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:06,843] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:08,394] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:08,399] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 7.jpg
+
+[2021-10-20 09:14:08,400] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 1.png
+
+[2021-10-20 09:14:08,407] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:08,429] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:14,830] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:14,833] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 1.png
+
+[2021-10-20 09:14:14,845] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 2.png
+
+[2021-10-20 09:14:14,852] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:14,892] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:21,814] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:21,817] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 2.png
+
+[2021-10-20 09:14:21,885] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 4.png
+
+[2021-10-20 09:14:21,894] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:21,961] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:25,976] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:25,979] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 4.png
+
+[2021-10-20 09:14:25,980] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 8.jpg
+
+[2021-10-20 09:14:25,984] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:26,025] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:28,003] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:28,006] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 8.jpg
+
+[2021-10-20 09:14:28,007] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 9.jpg
+
+[2021-10-20 09:14:28,009] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:28,034] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:29,796] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:29,799] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 9.jpg
+
+[2021-10-20 09:14:29,820] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 3.png
+
+[2021-10-20 09:14:29,824] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:29,868] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:33,900] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:33,905] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 3.png
+
+[2021-10-20 09:14:33,970] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 5.png
+
+[2021-10-20 09:14:33,983] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:34,054] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:37,657] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:37,661] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 5.png
+
+[2021-10-20 09:14:42,990] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:14:42,998] -- INFO - cryptoUtil.py -- encryptImages - Line no - 29 -- {'2.png', '0.png', '9.jpg', '5.png', '4.png', '8.jpg', '1.png', '6.jpg', '10.jpg', '3.png', '7.jpg'} will be encrypted now.
+
+[2021-10-20 09:14:43,000] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 2.png
+
+[2021-10-20 09:14:43,008] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:43,045] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:14:49,973] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:14:55,659] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:14:56,212] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 2.png
+
+[2021-10-20 09:14:56,217] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 2.png
+
+[2021-10-20 09:14:56,222] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 0.png
+
+[2021-10-20 09:14:56,237] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:14:56,329] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:01,353] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:01,821] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:02,294] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 0.png
+
+[2021-10-20 09:15:02,299] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 0.png
+
+[2021-10-20 09:15:02,304] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 9.jpg
+
+[2021-10-20 09:15:02,311] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:02,424] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:04,585] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:05,171] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:05,781] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 9.jpg
+
+[2021-10-20 09:15:05,785] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 9.jpg
+
+[2021-10-20 09:15:05,787] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 5.png
+
+[2021-10-20 09:15:05,791] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:05,827] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:10,085] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:10,694] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:11,307] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 5.png
+
+[2021-10-20 09:15:11,311] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 5.png
+
+[2021-10-20 09:15:11,314] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 4.png
+
+[2021-10-20 09:15:11,317] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:11,363] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:15,074] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:15,715] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:16,325] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 4.png
+
+[2021-10-20 09:15:16,387] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 4.png
+
+[2021-10-20 09:15:16,390] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 8.jpg
+
+[2021-10-20 09:15:16,394] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:16,457] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:18,238] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:18,909] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:19,507] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 8.jpg
+
+[2021-10-20 09:15:19,512] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 8.jpg
+
+[2021-10-20 09:15:19,516] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 1.png
+
+[2021-10-20 09:15:19,534] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:19,645] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:25,687] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:26,221] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:26,777] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 1.png
+
+[2021-10-20 09:15:26,782] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 1.png
+
+[2021-10-20 09:15:26,785] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 6.jpg
+
+[2021-10-20 09:15:26,790] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:26,857] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:28,186] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:28,727] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:29,463] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 6.jpg
+
+[2021-10-20 09:15:29,521] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 6.jpg
+
+[2021-10-20 09:15:29,524] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 10.jpg
+
+[2021-10-20 09:15:29,529] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:29,596] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:30,803] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:31,396] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:31,991] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 10.jpg
+
+[2021-10-20 09:15:31,996] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 10.jpg
+
+[2021-10-20 09:15:31,997] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 3.png
+
+[2021-10-20 09:15:32,011] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:32,102] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:36,933] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:37,556] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:38,159] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 3.png
+
+[2021-10-20 09:15:38,163] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 3.png
+
+[2021-10-20 09:15:38,166] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 7.jpg
+
+[2021-10-20 09:15:38,171] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:15:38,233] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:15:39,971] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:15:40,595] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:15:41,207] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 7.jpg
+
+[2021-10-20 09:15:41,211] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 7.jpg
+
+[2021-10-20 09:16:14,225] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:16:23,707] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-20 09:16:30,303] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-20 09:16:36,476] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-20 09:16:41,053] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-20 09:16:44,890] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-20 09:16:48,581] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-20 09:19:09,834] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:19:47,389] -- INFO - cryptoUtil.py -- encryptImages - Line no - 29 -- {'10.png', '7.png', '8.png', '6.png', '9.png'} will be encrypted now.
+
+[2021-10-20 09:19:47,459] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 10.png
+
+[2021-10-20 09:19:47,471] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:19:47,536] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:19:52,645] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:19:57,718] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:19:58,240] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 10.png
+
+[2021-10-20 09:19:58,245] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 10.png
+
+[2021-10-20 09:19:58,262] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 7.png
+
+[2021-10-20 09:19:58,277] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:19:58,375] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:20:04,281] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:20:05,001] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:20:05,431] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 7.png
+
+[2021-10-20 09:20:05,436] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 7.png
+
+[2021-10-20 09:20:05,439] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 8.png
+
+[2021-10-20 09:20:05,450] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:20:05,518] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:20:10,371] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:20:10,829] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:20:11,345] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 8.png
+
+[2021-10-20 09:20:11,405] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 8.png
+
+[2021-10-20 09:20:11,427] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 6.png
+
+[2021-10-20 09:20:11,438] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:20:11,504] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:20:16,707] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:20:17,393] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:20:18,003] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 6.png
+
+[2021-10-20 09:20:18,009] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 6.png
+
+[2021-10-20 09:20:18,025] -- INFO - cryptoUtil.py -- encryptImage - Line no - 50 -- encrypting 9.png
+
+[2021-10-20 09:20:18,043] -- INFO - cryptoUtil.py -- encryptImage - Line no - 53 -- Generating cryptoSecrets for your image
+
+[2021-10-20 09:20:18,095] -- INFO - cryptoUtil.py -- encryptImage - Line no - 60 -- Encrypting image
+
+[2021-10-20 09:20:23,474] -- INFO - cryptoUtil.py -- encryptImage - Line no - 63 -- Storing to cryptoDB
+
+[2021-10-20 09:20:24,039] -- INFO - cryptoUtil.py -- encryptImage - Line no - 70 -- Committing to cryptoDB
+
+[2021-10-20 09:20:24,986] -- INFO - cryptoUtil.py -- encryptImage - Line no - 72 -- Saving encrypted image to 9.png
+
+[2021-10-20 09:20:25,044] -- INFO - cryptoUtil.py -- encryptImage - Line no - 79 -- successfully encrypted image 9.png
+
+[2021-10-20 09:20:25,047] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:20:30,012] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-20 09:20:37,427] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-20 09:20:43,936] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-20 09:20:48,645] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-20 09:20:52,291] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-20 09:20:55,805] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-20 09:21:01,382] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 6.png
+
+[2021-10-20 09:21:07,167] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 7.png
+
+[2021-10-20 09:21:12,490] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 8.png
+
+[2021-10-20 09:21:18,216] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 9.png
+
+[2021-10-20 09:21:24,291] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 10.png
+
+[2021-10-20 09:21:28,924] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 09:21:40,908] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-20 09:21:51,489] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-20 09:22:02,827] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-20 09:22:10,520] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-20 09:22:16,645] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-20 09:22:23,678] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-20 09:22:33,071] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 6.png
+
+[2021-10-20 09:22:41,782] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 7.png
+
+[2021-10-20 09:22:49,262] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 8.png
+
+[2021-10-20 09:22:59,588] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 9.png
+
+[2021-10-20 09:23:08,169] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 10.png
+
+[2021-10-20 11:32:39,228] -- INFO - cryptoUtil.py -- cacheImages - Line no - 106 -- Caching Images..
+
+[2021-10-20 11:32:49,946] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 0.png
+
+[2021-10-20 11:33:01,456] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 1.png
+
+[2021-10-20 11:33:21,330] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 2.png
+
+[2021-10-20 11:33:28,292] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 3.png
+
+[2021-10-20 11:33:32,874] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 4.png
+
+[2021-10-20 11:33:37,832] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 5.png
+
+[2021-10-20 11:33:47,080] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 6.png
+
+[2021-10-20 11:34:04,434] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 7.png
+
+[2021-10-20 11:34:18,301] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 8.png
+
+[2021-10-20 11:34:30,209] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 9.png
+
+[2021-10-20 11:34:37,916] -- INFO - cryptoUtil.py -- cacheImages - Line no - 109 -- Caching 10.png
+
+[2021-10-20 11:39:45,523] -- INFO - cryptoUtil.py -- cacheImages - Line no - 105 -- Started caching Images..
+
+[2021-10-20 11:39:57,896] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 0.png
+
+[2021-10-20 11:40:08,302] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 1.png
+
+[2021-10-20 11:40:29,976] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 2.png
+
+[2021-10-20 11:40:36,662] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 3.png
+
+[2021-10-20 11:40:42,425] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 4.png
+
+[2021-10-20 11:40:48,684] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 5.png
+
+[2021-10-20 11:41:00,065] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 6.png
+
+[2021-10-20 11:41:13,201] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 7.png
+
+[2021-10-20 11:41:27,522] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 8.png
+
+[2021-10-20 11:41:33,983] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 9.png
+
+[2021-10-20 11:41:39,682] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 10.png
+
+[2021-10-21 23:44:04,798] -- INFO - cryptoUtil.py -- cacheImages - Line no - 105 -- Started caching Images..
+
+[2021-10-21 23:44:15,004] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 0.png
+
+[2021-10-21 23:44:21,981] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 1.png
+
+[2021-10-21 23:44:28,462] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 2.png
+
+[2021-10-21 23:44:33,534] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 3.png
+
+[2021-10-21 23:44:37,745] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 4.png
+
+[2021-10-21 23:44:42,507] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 5.png
+
+[2021-10-21 23:44:49,922] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 6.png
+
+[2021-10-21 23:44:54,944] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 7.png
+
+[2021-10-21 23:45:00,372] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 8.png
+
+[2021-10-21 23:45:06,986] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 9.png
+
+[2021-10-21 23:45:12,853] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 10.png
+
+[2021-10-21 23:45:19,683] -- INFO - cryptoUtil.py -- cacheImages - Line no - 105 -- Started caching Images..
+
+[2021-10-21 23:45:34,879] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 0.png
+
+[2021-10-21 23:45:42,669] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 1.png
+
+[2021-10-21 23:45:52,547] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 2.png
+
+[2021-10-21 23:45:58,021] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 3.png
+
+[2021-10-21 23:46:05,498] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 4.png
+
+[2021-10-21 23:46:12,423] -- INFO - cryptoUtil.py -- cacheImages - Line no - 108 -- Caching 5.png
+

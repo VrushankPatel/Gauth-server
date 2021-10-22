@@ -3,6 +3,7 @@ import { Form, Row, InputGroup, Button, Card, Alert, ProgressBar } from "react-b
 import constants from "../common/Constants";
 import DrawUtil from "../common/DrawUtil";
 import Utilities from "../common/Util";
+var CryptoJS = require("crypto-js");
 
 class Signup extends Component {
     state = {
@@ -14,11 +15,14 @@ class Signup extends Component {
         confpwd: "",
         errorShow: false,
         errorMessage: "",
-        toggleForm: true,
+        toggleForm: false,
         showGrids: false,
         progress: 0,
         progressvariant: "secondary",
-        imgRetrieved: false
+        imgRetrieved: false,
+        isReadyForSubmit: false,
+        pointsErrorShow: false,
+        isSuccessfullyInesrted: false
     };
     regex = constants.regex;
     imgId = 0;
@@ -56,14 +60,16 @@ class Signup extends Component {
                 //     console.log(gridX === Math.floor(e.layerX / 50) + 1 && gridY === Math.floor(e.layerY / 50) + 1);
                 // }
                 if(this.coordinates.length >= 5){
-                    alert("Only 5 points can be selected, you've selected 5 points already, please submit to continue.")    
+                    this.showPointsError();
                     return;
                 }
                 gridX = Math.floor(e.layerX / 50) + 1;
                 gridY = Math.floor(e.layerY / 50) + 1;
                 this.coordinates.push([gridX, gridY]);
                 this.setState({progress: this.state.progress+20, progressvariant: this.progressVariants[this.state.progress+20]});
-                console.log(this.coordinates);                
+                if(this.coordinates.length === 5){
+                    this.setState({isReadyForSubmit: true})
+                }                                                
             });
             canvas.addEventListener('mousedown', (e) => {                
                 DrawUtil.drawPoints(e, this.coordinates.length);                    
@@ -76,25 +82,41 @@ class Signup extends Component {
 
     updateImage = () => {
         this.clearGrids();
-        this.setState({progress: 0});
+        this.setState({progress: 0, isReadyForSubmit: false});
         this.coordinates = [];
         const canvas = document.querySelector('canvas');
+        canvas.style.background = 'url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif) no-repeat center'; 
         Utilities.getImageBg(canvas, ++this.imgId);
     }
 
-    actionImgRetrieval = (imgRetrieved) => {        
-        this.setState({imgRetrieved : imgRetrieved}, () => {
-            console.log(imgRetrieved);
-        });        
+    showSuccessAlert = () => {
+        this.setState({isSuccessfullyInesrted: true});        
+    }
+    handleImageSubmit = () => { 
+        let coordArray = [];      
+        this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
+        let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();        
+        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();
+        console.log(hashedCoordinates);
+        console.log(this.imgId);
+        let data = {
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            userName: this.state.userName,
+            password: this.state.pwd,
+            imgId: String(this.imgId),
+            coordHash: hashedCoordinates
+        }
+        console.log(data);
+        Utilities.signUp(data, this.toggleFormWithError, this.showSuccessAlert);
     }
 
-    handleImageSubmit = () => {
-        console.log(this.coordinates.length);
-        console.log(this.state.progress);
+    toggleFormWithError = (message) => {
+        this.showError(message);
+        this.setState({toggleForm: false});
     }
 
-    toggleGrids = (color) => {
-        const canvas = document.querySelector('canvas');
+    toggleGrids = (color) => {        
         if(this.state.showGrids) this.clearGrids();
         else this.drawGrids(color);
     }
@@ -135,12 +157,20 @@ class Signup extends Component {
         });
     }
 
+    showPointsError = () => {
+        this.setState({ pointsErrorShow: true }, () => {
+            setTimeout(() => {
+                this.setState({ pointsErrorShow: false });
+            }, constants.errorMessageTimeout)
+        });
+    }
+
     render() {
         return (
             <div className="container pt-4 pb-5">
                 <div className="row justify-content-center">
                     <div className="col-lg-6 col-md-8 col-12" style={{ display: this.state.toggleForm ? "none" : "block" }}>
-                        <Card>
+                        <Card>                        
                             <Alert
                                 style={{ display: this.state.errorShow ? "block" : "none" }}
                                 variant={"danger"}>
@@ -225,10 +255,22 @@ class Signup extends Component {
                         </Card>
                     </div>
                 </div>                
-                
-                <center style={{display: this.state.toggleForm ? "block" : "none"}}>
+                <Alert
+                    style={{ display: this.state.isSuccessfullyInesrted ? "block" : "none" }}
+                    onClick={() => {window.location.replace("/login")}}
+                    variant={"success"}>
+                    User successfully inserted, Please {' '}
+                    <Button variant="success">signin</Button> {' '} to continue
+                </Alert>
+                <center style={{display: this.state.toggleForm && this.state.isSuccessfullyInesrted === false ? "block" : "none"}}>
+                    <Alert
+                        style={{ display: this.state.pointsErrorShow ? "block" : "none" }}
+                        variant={"danger"}>
+                        Only 5 points can be selected, you've selected 5 points already, please submit to continue.
+                    </Alert>                    
                     <canvas className="row justify-content-center" style={{                    
                         width: "1001px",
+                        background: 'url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif) no-repeat center center',
                         height: "601px",                        
                         border: "1px solid black"                        
                     }}></canvas>
@@ -251,12 +293,12 @@ class Signup extends Component {
                             <ProgressBar animated variant={this.state.progressvariant} now={this.state.progress} />                            
                         </div>
                         <div className="col-2 pt-1">
-                            <Button variant="warning" onClick={() => {this.setState({progress: 0});this.coordinates=[];this.clearGrids();}}>
+                            <Button variant="warning" onClick={() => {this.setState({progress: 0});this.coordinates=[];}}>
                                 Clear
                             </Button>
                         </div>                        
                         <div className="col-2 pt-1">
-                            <Button variant="success" onClick={this.handleImageSubmit}>
+                            <Button variant="success" onClick={this.handleImageSubmit} disabled={!this.state.isReadyForSubmit}>
                                 Submit
                             </Button>
                         </div>

@@ -72,8 +72,7 @@ def encryptImage(ImageHashDb, db, forceEncrypt, imgName):
         logger.info(f"Saving encrypted image to {imgName}")
         with open(f"{constants.ASSET_DIR}imgs-encrypted/{imgName}", "wb") as image_enc:
             image_enc.write(ciphertext)
-    except Exception as e:
-        print(e)
+    except Exception as e:        
         logger.error("Error occured, reEncryption might be required for " + imgName)
         # encryptImage(ImageHashDb, db, forceEncrypt, imgName)
     logger.info(f"successfully encrypted image {imgName}")
@@ -103,8 +102,15 @@ def getDecryptedImage(ImageHashDB, imgName):
 
 def cacheImages(ImageHashDB):
     imgs = dict()
-    logger.info("Caching Images..")
+    logger.info("Started caching Images..")
     for i in range(len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))):
         imgs[i] = getDecryptedImage(ImageHashDB, f"{i}.png")
         logger.info(f"Caching {i}.png")
     return imgs
+
+def validateToken(token):
+    try:
+        tokenSize = int(token[22] + token[44]) + 2        
+        return True if len(token) == tokenSize else False        
+    except:
+        return False

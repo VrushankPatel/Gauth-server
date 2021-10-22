@@ -1,13 +1,21 @@
 import os
 import urllib
-from flask import Flask, send_from_directory
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
-from config.config import getFirebaseConfig
-from src.cryptoUtil import encryptImages, getDecryptedImage, cacheImages
-from src import constants
 
-app = Flask(__name__, static_url_path='/graphauth/build/static', static_folder='build')
+import requests
+from autopylogger import init_logging
+from flask import Flask, request
+from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
+
+from config.config import getFirebaseConfig
+from src import constants
+from src.cryptoUtil import (cacheImages, encryptImages, getDecryptedImage,
+                            validateToken)
+from src.util import buildResponse
+
+logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
+
+app = Flask(__name__)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -29,17 +37,44 @@ class ImageHashDB(db.Model):
         self.key = key
         self.iv = iv
 
-imgs = {}
+class UserRecord(db.Model):
+    __tablename__ = 'UserRecord'
+    firstName = db.Column('firstName', db.String(100))
+    lastName = db.Column('lastName', db.String(100))
+    userName = db.Column('userName', db.String(1000), primary_key=True)
+    password = db.Column('password', db.String(1000))
+    imgId = db.Column('imgId', db.Integer)
+    coordHash = db.Column('coordHash', db.String(1000))
+
+    def __init__(self, jsonObj):
+        super().__init__()        
+        self.firstName = jsonObj['firstName']
+        self.lastName = jsonObj['lastName']
+        self.userName = jsonObj['userName']
+        self.password = jsonObj['password']
+        self.imgId = jsonObj['imgId']
+        self.coordHash = jsonObj['coordHash']
+
+# encryptImages(ImageHashDB, db, False)
 ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
 # imgs = cacheImages(ImageHashDB)
 
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def catch_all(path):
-    return send_from_directory(app.static_folder,'index.html')
+@app.route('/api/signup', methods=['POST'])
+def signup():
+    if checkIfUserExists(request.json['userName'])[1] == 200:        
+        return buildResponse("Record Already Exists", 409)
+    else:
+        record = UserRecord(request.json)
+        db.session.add(record)
+        db.session.commit()        
+        return buildResponse("Record successfully inserted", 200)
 
 @app.route('/api/getImage/<image_id>', methods=['POST'])
-def getImage(image_id):
+def getImage(image_id):    
+    token = request.args['x-token']
+    if not validateToken(token): 
+        logger.warn("Token is Expired, returning token expired")    
+        return buildResponse("Token Expired!.", 401)
     image_id = int(image_id)
     image_id = image_id % ttlImgs if image_id > ttlImgs-1 else image_id
     if image_id in imgs.keys():
@@ -47,8 +82,12 @@ def getImage(image_id):
     else:
         imgs[image_id] = getDecryptedImage(ImageHashDB, f"{image_id}.png")
         return imgs[image_id]
+    
+@app.route('/api/checkIfUserExists/<userName>', methods=['POST'])
+def checkIfUserExists(userName):
+    record = UserRecord.query.filter(UserRecord.userName == userName).first()
+    return buildResponse("User Exists", 200) if record else buildResponse("User doesn't exists", 404) 
 
-if __name__ == '__main__':
-    encryptImages(ImageHashDB, db, False)
+if __name__ == '__main__':    
     db.create_all()    
     app.run(debug=True)
