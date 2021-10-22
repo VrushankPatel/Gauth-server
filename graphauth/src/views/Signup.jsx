@@ -49,16 +49,7 @@ class Signup extends Component {
         if (window.PointerEvent) {            
             canvas.addEventListener('touchstart', preventDefault, { passive: false });
             canvas.addEventListener('touchmove', preventDefault, { passive: false });
-            canvas.addEventListener('click', (e) => {
-                // if (toggle === 0) {
-                //     toggle = 1;
-                //     gridX = Math.floor(e.layerX / 50) + 1;
-                //     gridY = Math.floor(e.layerY / 50) + 1;
-                // } else {
-                //     toggle = 0;
-                //     console.log(gridX, gridY);
-                //     console.log(gridX === Math.floor(e.layerX / 50) + 1 && gridY === Math.floor(e.layerY / 50) + 1);
-                // }
+            canvas.addEventListener('click', (e) => {                
                 if(this.coordinates.length >= 5){
                     this.showPointsError();
                     return;
@@ -96,9 +87,7 @@ class Signup extends Component {
         let coordArray = [];      
         this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
         let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();        
-        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();
-        console.log(hashedCoordinates);
-        console.log(this.imgId);
+        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();        
         let data = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
@@ -106,8 +95,7 @@ class Signup extends Component {
             password: this.state.pwd,
             imgId: String(this.imgId),
             coordHash: hashedCoordinates
-        }
-        console.log(data);
+        }        
         Utilities.signUp(data, this.toggleFormWithError, this.showSuccessAlert);
     }
 
@@ -259,7 +247,7 @@ class Signup extends Component {
                     style={{ display: this.state.isSuccessfullyInesrted ? "block" : "none" }}
                     onClick={() => {window.location.replace("/login")}}
                     variant={"success"}>
-                    User successfully inserted, Please {' '}
+                    Signup Successful, Please {' '}
                     <Button variant="success">signin</Button> {' '} to continue
                 </Alert>
                 <center style={{display: this.state.toggleForm && this.state.isSuccessfullyInesrted === false ? "block" : "none"}}>

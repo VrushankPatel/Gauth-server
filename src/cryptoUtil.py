@@ -7,6 +7,7 @@ import os
 import random
 import secrets
 import string
+import pickle
 from io import BytesIO
 from urllib.request import urlopen
 
@@ -100,14 +101,27 @@ def getDecryptedImage(ImageHashDB, imgName):
     }
     return response
 
-def cacheImages(ImageHashDB):
+def cacheImages(ImageHashDB):    
+    imgs = checkIfPickledObject()
+    if imgs:
+        return imgs
     imgs = dict()
     logger.info("Started caching Images..")
     for i in range(len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))):
         imgs[i] = getDecryptedImage(ImageHashDB, f"{i}.png")
         logger.info(f"Caching {i}.png")
+    with open(constants.CACHED_PICKLE_FILE, 'wb') as outp:
+        pickle.dump(imgs, outp, pickle.HIGHEST_PROTOCOL)
     return imgs
 
+def checkIfPickledObject():
+    if os.path.exists(constants.CACHED_PICKLE_FILE):
+        logger.info("Found pickled object, utilizing it..")
+        with open(constants.CACHED_PICKLE_FILE, 'rb') as inp:
+            imgs = pickle.load(inp)
+        return imgs
+    return None
+    
 def validateToken(token):
     try:
         tokenSize = int(token[22] + token[44]) + 2        

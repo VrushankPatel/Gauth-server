@@ -38,11 +38,9 @@ const Utilities = {
             'Content-Type': 'application/json'
         },
         data : record
-        };
-        console.log(JSON.stringify(record), config);        
+        };        
         axios(config)
-        .then(function (response) { 
-            console.log(response)           ;
+        .then(function (response) {             
             if (response.status === 200){                
                 showSuccessInsertAlert();                
             }
@@ -81,8 +79,7 @@ const Utilities = {
         };
         axios(config)
         .then(function (response) {
-            document.write("<h1>Welcome to NYIT</h1>");
-        console.log(JSON.stringify(response.data));
+            document.write("<h1>Welcome to NYIT</h1>");        
         })
         .catch(function (error) {
             alert("Invalid points selections, please select the points again..");
@@ -101,8 +98,7 @@ const Utilities = {
         };
         axios(config)
         .then(function (response) {
-            document.write("<h1>Welcome to NYIT</h1>");
-        // console.log(JSON.stringify(response.data));
+            document.write("<h1>Welcome to NYIT</h1>");        
         })
         .catch(function (error) {                        
             pwdIncorrectError();

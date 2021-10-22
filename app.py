@@ -10,6 +10,7 @@ from src import constants
 from src.cryptoUtil import (cacheImages, encryptImages, getDecryptedImage,
                             validateToken)
 from src.util import buildResponse, buildResponseWithImgId
+import pickle
 
 logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
 
@@ -55,7 +56,8 @@ class UserRecord(db.Model):
 
 # encryptImages(ImageHashDB, db, False)
 ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
-# imgs = cacheImages(ImageHashDB)
+
+imgs = cacheImages(ImageHashDB)
 
 @app.route('/api/signup', methods=['POST'])
 def signup():
