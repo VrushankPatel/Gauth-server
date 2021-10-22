@@ -52,7 +52,61 @@ const Utilities = {
                 toggleForm("UserName already Exists..");
             }
         });
-
+    },
+    checkIfUserExists: (userName, toggleForm, showUserNotFoundError, updateImage) => {
+        var config = {
+            method: 'post',
+            url: constants.apiIdentifier + '/checkIfUserExists/' + userName            
+          };          
+          axios(config)
+          .then(function (response) {
+              let imgId = parseInt(response.data['imgId']);
+                updateImage(imgId);                
+                toggleForm();
+          }).catch(function (error) {
+              if(error.response.status === 404){
+                showUserNotFoundError();
+              }
+          });          
+    },
+    loginByImgCoords: (data, clearPoints) => {
+        data = JSON.stringify(data);
+        var config = {
+        method: 'post',
+        url: constants.apiIdentifier + '/login',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+        axios(config)
+        .then(function (response) {
+            document.write("<h1>Welcome to NYIT</h1>");
+        console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {
+            alert("Invalid points selections, please select the points again..");
+            clearPoints();
+        });
+    },
+    loginByPassword: (data, pwdIncorrectError) => {
+        data = JSON.stringify(data);
+        var config = {
+        method: 'post',
+        url: constants.apiIdentifier + '/login',
+        headers: { 
+            'Content-Type': 'application/json'
+        },
+        data : data
+        };
+        axios(config)
+        .then(function (response) {
+            document.write("<h1>Welcome to NYIT</h1>");
+        // console.log(JSON.stringify(response.data));
+        })
+        .catch(function (error) {                        
+            pwdIncorrectError();
+        });
     }
 }
 export default Utilities

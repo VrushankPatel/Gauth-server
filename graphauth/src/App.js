@@ -11,11 +11,7 @@ function App() {
   return (
     < Router >
       <div className="App" >
-        <NavBarX page="home" />
-        <Route exact path="/" >
-          vrushank
-          {/* <WelcomeView /> */}
-        </Route>
+        <NavBarX page="home" />        
         <Route path="/login" >
           <Login />
           {/* <AboutView /> */}

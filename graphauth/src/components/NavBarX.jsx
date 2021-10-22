@@ -26,13 +26,7 @@ class NavBarX extends Component {
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="mr-auto">
-                            <Nav.Link
-                                className={this.getActiveLabelBold("Home")}
-                                href="/"
-                            >
-                                Home
-                            </Nav.Link>
+                        <Nav className="mr-auto">                            
                             <Nav.Link
                                 href="/login"
                                 className={this.getActiveLabelBold("Api")}

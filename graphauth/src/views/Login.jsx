@@ -18,7 +18,8 @@ class Login extends Component {
         progressvariant: "secondary",
         imgRetrieved: false,
         isReadyForSubmit: false,
-        pointsErrorShow: false        
+        pointsErrorShow: false,
+        logInByPassword: false
     };
     regex = constants.regex;
     imgId = 0;
@@ -76,29 +77,26 @@ class Login extends Component {
         }
     }    
 
-    updateImage = () => {
+    updateImage = (imgId) => {
+        this.imgId = imgId;
         this.clearGrids();
         this.setState({progress: 0, isReadyForSubmit: false});
         this.coordinates = [];
         const canvas = document.querySelector('canvas');
         canvas.style.background = 'url(https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif) no-repeat center'; 
-        Utilities.getImageBg(canvas, ++this.imgId);
+        Utilities.getImageBg(canvas, this.imgId);
     }
     
     handleImageSubmit = () => { 
-        let coordArray = [];      
+        let coordArray = [];
         this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
         let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();        
-        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();
-        console.log(hashedCoordinates);
-        console.log(this.imgId);
+        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();        
         let data = {
-            userName: this.state.userName,
-            password: this.state.pwd,
+            userName: this.state.userName,            
             coordHash: hashedCoordinates
-        }
-        console.log(data);
-        // Utilities.signUp(data, this.toggleFormWithError, this.showSuccessAlert);
+        }                
+        Utilities.loginByImgCoords(data, this.clearPoints);
     }    
 
     toggleGrids = (color) => {        
@@ -112,6 +110,11 @@ class Login extends Component {
         this.setState({showGrids: false});
     }
 
+    clearPoints = () => {
+        this.setState({progress: 0, isReadyForSubmit: false});
+        this.coordinates=[];
+    }    
+
     drawGrids = (color) => {
         const canvas = document.querySelector('canvas');
         DrawUtil.drawGrids(canvas, color);
@@ -119,13 +122,39 @@ class Login extends Component {
     }
 
     handleSubmit = () => {        
-        if (!this.regex.test(this.state.userName) || !this.regex.test(this.state.pwd)) {
+        if (!this.regex.test(this.state.userName)) {
+            this.showError(constants.errors.INVALID_USERNAME);
+            return;
+        }
+        if (this.state.logInByPassword && !this.regex.test(this.state.pwd)){
             this.showError(constants.errors.INVALID_USERNAME_OR_PASSWORD);
             return;
         }
-        this.setState({toggleForm: true})
+        Utilities.checkIfUserExists(this.state.userName, () => {
+            this.setState({toggleForm: true})
+        }, () => {
+            this.showError(constants.errors.USER_NOT_FOUND);
+        }, this.updateImage);
     };
-
+    
+    handleSubmitWithPassword = () => {        
+        if (!this.regex.test(this.state.userName)) {
+            this.showError(constants.errors.INVALID_USERNAME);
+            return;
+        }
+        if (this.state.logInByPassword && !this.regex.test(this.state.pwd)){
+            this.showError(constants.errors.INVALID_USERNAME_OR_PASSWORD);
+            return;
+        }        
+        let data = {
+            userName: this.state.userName,            
+            password: this.state.pwd
+        }                
+        Utilities.loginByPassword(data, () => {
+            this.showError(constants.errors.INCORRECT_USERNAME_OR_PASSWORD)
+        });
+    };
+    
     showError = (errorMessage) => {
         this.setState({ errorMessage: errorMessage, errorShow: true }, () => {
             setTimeout(() => {
@@ -171,7 +200,7 @@ class Login extends Component {
                                             />
                                         </InputGroup>
                                     </Form.Group>
-                                    <Form.Group className="pb-3" controlId="validationPassword">
+                                    <Form.Group className="pb-3" controlId="validationPassword" style={{ display: this.state.logInByPassword ? "block" : "none"}}>
                                         <Form.Label>Password</Form.Label>
                                         <InputGroup hasValidation>
                                             <Form.Control
@@ -187,7 +216,17 @@ class Login extends Component {
                                         </InputGroup>
                                     </Form.Group>                                    
                                 </Row>
-                                <Button className="mb-5" onClick={this.handleSubmit}>Submit</Button>
+                                <Row>
+                                <div className="float-left col-6">
+                                <Button className="mb-5" onClick={() => {this.setState({logInByPassword: !this.state.logInByPassword})}}>
+                                    {this.state.logInByPassword ? "Use Image" : "Use Password"}
+                                </Button>
+                                </div>
+                                <div className="float-right col-6">
+                                    {this.state.logInByPassword ? 
+                                    <Button className="mb-5" variant="success" onClick={this.handleSubmitWithPassword}>Submit</Button> : 
+                                    <Button className="mb-5" variant="success" onClick={this.handleSubmit}>Submit</Button>}      
+                                </div></Row>
                             </Form>
                         </Card>
                     </div>
@@ -212,13 +251,18 @@ class Login extends Component {
                             <div className="pt-2" style={{display: this.state.showGrids ? "block" : "none"}}>
                                 <input onChange={(e) => {this.drawGrids(e.target.value)}} title="Grid Color" type="color"></input>                            
                             </div>
-                        </div>                               
+                        </div>     
+                        <div className="col-2 pt-1">
+                            <Button variant="secondary" onClick={() => {this.setState({toggleForm: false, logInByPassword: true})}}>
+                                Use Password
+                            </Button>
+                        </div>                          
                         <div className="col-2 pb-2">
                             Points Selection {this.state.progress}%
                             <ProgressBar animated variant={this.state.progressvariant} now={this.state.progress} />                            
                         </div>
                         <div className="col-2 pt-1">
-                            <Button variant="warning" onClick={() => {this.setState({progress: 0});this.coordinates=[];}}>
+                            <Button variant="warning" onClick={this.clearPoints}>
                                 Clear
                             </Button>
                         </div>                        

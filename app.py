@@ -11,7 +11,7 @@ from config.config import getFirebaseConfig
 from src import constants
 from src.cryptoUtil import (cacheImages, encryptImages, getDecryptedImage,
                             validateToken)
-from src.util import buildResponse
+from src.util import buildResponse, buildResponseWithImgId
 
 logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
 
@@ -61,7 +61,7 @@ ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
 
 @app.route('/api/signup', methods=['POST'])
 def signup():
-    if checkIfUserExists(request.json['userName'])[1] == 200:        
+    if checkIfUserExists(request.json['userName'])[1] == 200:
         return buildResponse("Record Already Exists", 409)
     else:
         record = UserRecord(request.json)
@@ -86,7 +86,22 @@ def getImage(image_id):
 @app.route('/api/checkIfUserExists/<userName>', methods=['POST'])
 def checkIfUserExists(userName):
     record = UserRecord.query.filter(UserRecord.userName == userName).first()
-    return buildResponse("User Exists", 200) if record else buildResponse("User doesn't exists", 404) 
+    return buildResponseWithImgId("User Exists", record.imgId, 200) if record else buildResponse("User doesn't exists", 404)     
+
+@app.route('/api/login', methods=['POST'])
+def login():
+    userName = request.json['userName']    
+    if checkIfUserExists(userName)[1] == 404:
+        return buildResponse("No such user exists", 404)
+    record = UserRecord.query.filter(UserRecord.userName == userName).first()
+    if 'password' in request.json.keys():        
+        return buildResponse("Successfully logged in.",200) if record.password == request.json['password'] else buildResponse("Invalid password", 403)        
+    elif 'coordHash' in request.json.keys():
+        if record.coordHash == request.json['coordHash']:
+            return buildResponse("Successfully logged in.",200)
+        else:
+            return buildResponse("Invalid coordHash", 403)    
+    return "vrushank"
 
 if __name__ == '__main__':    
     db.create_all()    
