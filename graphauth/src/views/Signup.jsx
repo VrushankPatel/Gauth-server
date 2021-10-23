@@ -86,16 +86,17 @@ class Signup extends Component {
     handleImageSubmit = () => { 
         let coordArray = [];      
         this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
-        let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();        
+        let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();
         let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();        
         let data = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
-            userName: this.state.userName,
-            password: this.state.pwd,
+            userName: this.state.userName,            
+            password: CryptoJS.HmacSHA1(this.state.pwd, this.state.userName).toString(),
             imgId: String(this.imgId),
             coordHash: hashedCoordinates
-        }        
+        }
+        
         Utilities.signUp(data, this.toggleFormWithError, this.showSuccessAlert);
     }
 

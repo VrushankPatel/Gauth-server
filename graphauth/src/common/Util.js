@@ -49,6 +49,9 @@ const Utilities = {
             if (error.response.status === 409){
                 toggleForm("UserName already Exists..");
             }
+            if (error.response.status === 500){
+                toggleForm("Error while processing your data, please try again later");
+            }
         });
     },
     checkIfUserExists: (userName, toggleForm, showUserNotFoundError, updateImage) => {
@@ -82,8 +85,12 @@ const Utilities = {
             document.write("<h1>Welcome to NYIT</h1>");        
         })
         .catch(function (error) {
-            alert("Invalid points selections, please select the points again..");
-            clearPoints();
+            if (error.response.status === 403){
+                alert("Invalid points selections, please select the points again..");
+                clearPoints();
+            }else if(error.response.status === 500){
+                alert("Unknown error occured, please try again later!");
+            }
         });
     },
     loginByPassword: (data, pwdIncorrectError) => {

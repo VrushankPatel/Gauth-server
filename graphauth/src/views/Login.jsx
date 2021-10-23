@@ -91,7 +91,7 @@ class Login extends Component {
         let coordArray = [];
         this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
         let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();        
-        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();        
+        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.toString(), salt).toString();        
         let data = {
             userName: this.state.userName,            
             coordHash: hashedCoordinates
@@ -148,7 +148,7 @@ class Login extends Component {
         }        
         let data = {
             userName: this.state.userName,            
-            password: this.state.pwd
+            password: CryptoJS.HmacSHA1(this.state.pwd, this.state.userName).toString()
         }                
         Utilities.loginByPassword(data, () => {
             this.showError(constants.errors.INCORRECT_USERNAME_OR_PASSWORD)
