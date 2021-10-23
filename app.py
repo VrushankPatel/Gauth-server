@@ -47,7 +47,7 @@ class UserRecord(db.Model):
     coordHash = db.Column('coordHash', db.String(1000))
 
     def __init__(self, jsonObj):
-        super().__init__()        
+        super().__init__()
         self.firstName = jsonObj['firstName']
         self.lastName = jsonObj['lastName']
         self.userName = jsonObj['userName']
@@ -57,6 +57,7 @@ class UserRecord(db.Model):
 
 # encryptImages(ImageHashDB, db, False)
 ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
+
 imgs = cacheImages(ImageHashDB)
 
 @app.route('/api/signup', methods=['POST'])
@@ -76,7 +77,7 @@ def signup():
 @app.route('/api/getImage/<image_id>', methods=['POST'])
 def getImage(image_id):    
     token = request.args['x-token']
-    if not validateToken(token):
+    if not validateToken(token): 
         logger.warn("Token is Expired")
         return buildResponse("Token Expired!.", 401)
     image_id = int(image_id)
@@ -90,7 +91,7 @@ def getImage(image_id):
 @app.route('/api/checkIfUserExists/<userName>', methods=['POST'])
 def checkIfUserExists(userName):
     record = UserRecord.query.filter(UserRecord.userName == userName).first()
-    return buildResponseWithImgId("User Exists", record.imgId, 200) if record else buildResponse("User doesn't exists", 404)
+    return buildResponseWithImgId("User Exists", record.imgId, 200) if record else buildResponse("User doesn't exists", 404)     
 
 @app.route('/api/login', methods=['POST'])
 def login():

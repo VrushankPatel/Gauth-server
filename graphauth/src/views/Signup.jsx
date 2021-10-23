@@ -87,7 +87,7 @@ class Signup extends Component {
         let coordArray = [];      
         this.coordinates.forEach(subArray => subArray.forEach(element => coordArray.push(element)));
         let salt = CryptoJS.HmacSHA1(this.state.userName, this.imgId.toString()).toString();
-        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.reduce((a, b) => a + b, 0).toString(), salt).toString();        
+        let hashedCoordinates = CryptoJS.HmacSHA1(coordArray.toString(), salt).toString();        
         let data = {
             firstName: this.state.firstName,
             lastName: this.state.lastName,
