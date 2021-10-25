@@ -1,6 +1,6 @@
 from flask import jsonify
 from autopylogger import init_logging
-from .cryptoUtil import getDecryptedImage
+from .securityUtil import getDecryptedImage
 import pickle
 from . import constants
 import os

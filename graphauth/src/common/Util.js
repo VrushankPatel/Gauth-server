@@ -105,7 +105,7 @@ const Utilities = {
         };
         axios(config)
         .then(function (response) {
-            document.write("<h1>Welcome to NYIT</h1>");        
+            document.write("<h1 class='jumbotron'>Welcome to NYIT</h1>");        
         })
         .catch(function (error) {                        
             pwdIncorrectError();

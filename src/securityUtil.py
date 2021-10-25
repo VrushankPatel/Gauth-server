@@ -7,7 +7,6 @@ import os
 import random
 import secrets
 import string
-import pickle
 from io import BytesIO
 from urllib.request import urlopen
 
@@ -38,8 +37,7 @@ def checkIfImagesAreInSync(forceEncrypt):
     else:
         logger.info("Images are in sync,")
     if forceEncrypt:
-        logger.warn("Encrypting images forcefully")    
-    unencryptedImages = []
+        logger.warn("Encrypting images forcefully")        
     if not forceEncrypt and originalImages == encryptedImages:
         return;
     unencryptedImages = originalImages if forceEncrypt else set(originalImages).difference(encryptedImages)

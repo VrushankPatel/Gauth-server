@@ -2,6 +2,7 @@ import './App.css';
 import NavBarX from './components/NavBarX';
 import Signup from './views/Signup';
 import Login from './views/Login';
+import Welcome from './views/Welcome';
 import {
   BrowserRouter as Router,
   Route
@@ -10,15 +11,15 @@ import {
 function App() {
   return (
     < Router >
-      <div className="App" >
-        <NavBarX page="home" />        
+      <div className="App" >        
+        <Route path="/" strict exact component={Welcome}/>          
         <Route path="/login" >
-          <Login />
-          {/* <AboutView /> */}
+        <NavBarX/>
+          <Login />          
         </Route>
         <Route path="/signup" >
-          <Signup />
-          {/* <Api /> */}
+        <NavBarX page="home" />
+          <Signup />          
         </Route>
       </div>
     </Router>

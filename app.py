@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from config.config import getFirebaseConfig
 from src import constants
-from src.cryptoUtil import (encryptImages, getDecryptedImage,
+from src.securityUtil import (encryptImages, getDecryptedImage,
                             validateToken)                    
 from src.util import buildResponse, buildResponseWithImgId, cacheImages
 import pickle
