@@ -19,7 +19,7 @@ from PIL import Image
 from . import constants
 
 
-logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
+logger = init_logging(log_name="Gauth-securities", log_directory="logsdir")
 
 def encryptImages(ImageHashDb, db, forceEncrypt):
     unencryptedImages = checkIfImagesAreInSync(forceEncrypt)
@@ -53,9 +53,7 @@ def encryptImage(ImageHashDb, db, forceEncrypt, imgName):
     passwordSalt = os.urandom(16)
     key = pbkdf2.PBKDF2(password, passwordSalt).read(32).decode('unicode-escape').encode('ISO-8859-1')
     iv = secrets.randbits(256)
-    aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))
-
-    logger.info("Encrypting image")
+    aes = pyaes.AESModeOfOperationCTR(key, pyaes.Counter(iv))    
     try:
         ciphertext = aes.encrypt(data)        
         logger.info("Storing to cryptoDB")

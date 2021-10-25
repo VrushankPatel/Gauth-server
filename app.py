@@ -13,7 +13,7 @@ from src.securityUtil import (encryptImages, getDecryptedImage,
 from src.util import buildResponse, buildResponseWithImgId, cacheImages
 import pickle
 
-logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
+logger = init_logging(log_name="Gauth-app", log_directory="logsdir")
 
 app = Flask(__name__)
 

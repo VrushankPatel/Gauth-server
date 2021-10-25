@@ -1,11 +1,11 @@
 from flask import jsonify
 from autopylogger import init_logging
 from .securityUtil import getDecryptedImage
-import pickle5 as pickle
+import pickle
 from . import constants
 import os
 
-logger = init_logging(log_name="Gauth-logs", log_directory="logsdir")
+logger = init_logging(log_name="Gauth-utilities", log_directory="logsdir")
 
 def buildResponse(message, statusCode):
     return jsonify({"message" : message}), statusCode

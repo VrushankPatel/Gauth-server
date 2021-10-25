@@ -10,7 +10,7 @@ const constants = {
     },
     errorMessageTimeout: 3000,
     fireStore: "https://firebasestorage.googleapis.com/v0/b/gauth-x.appspot.com/o/image.jpg?alt=media",
-    // apiIdentifier: "http://localhost:5000/api",
-    apiIdentifier: "https://gauth-server.herokuapp.com/api"
+    apiIdentifier: "http://localhost:5000/api",
+    // apiIdentifier: "https://gauth-server.herokuapp.com/api"
 }
 export default constants

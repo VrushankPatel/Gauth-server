@@ -9,7 +9,7 @@ class Welcome extends Component {
                 <div class="site-header-inner">
                     <div class="brand header-brand">
                         <h1 class="m-0">
-							<a href="#">
+							<a href>
 								<img width="200" class="header-logo-image" src="https://gauth-x.web.app/static/media/logo.05dab920.png" alt="Logo"/>
                             </a>
                         </h1>
@@ -108,7 +108,7 @@ class Welcome extends Component {
             <div class="container">
                 <div class="site-footer-inner">
                     <div class="brand footer-brand">
-						<a href="#">
+						<a href>
 							<img width="200" class="header-logo-image" src="https://gauth-x.web.app/static/media/logo.05dab920.png" alt="Logo"/>
 						</a>
                     </div>
