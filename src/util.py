@@ -1,7 +1,7 @@
 from flask import jsonify
 from autopylogger import init_logging
 from .securityUtil import getDecryptedImage
-import pickle
+import pickle5 as pickle
 from . import constants
 import os
 
