@@ -4,8 +4,10 @@ from .securityUtil import getDecryptedImage
 import pickle
 from . import constants
 import os
+import time
 
 logger = init_logging(log_name="Gauth-utilities", log_directory="logsdir")
+failAttempts = dict()
 
 def buildResponse(message, statusCode):
     return jsonify({"message" : message}), statusCode
@@ -32,4 +34,17 @@ def checkIfPickledObject():
         with open(constants.CACHED_PICKLE_FILE, 'rb') as inp:
             imgs = pickle.load(inp)
         return imgs
-    return None    
+    return None
+
+def countTimeAndSendErrorLogin(message, statusCode, userName, LockedAccounts, db):
+    if userName in failAttempts.keys():        
+        if failAttempts[userName] >= 5:            
+            record = LockedAccounts(userName, int(time.time()))
+            db.session.add(record)
+            db.session.commit()
+            del failAttempts[userName]
+        else:            
+            failAttempts[userName] += 1
+    else:        
+        failAttempts[userName] = 1    
+    return buildResponse(message, statusCode)    

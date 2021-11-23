@@ -86,14 +86,16 @@ const Utilities = {
         })
         .catch(function (error) {
             if (error.response.status === 403){
-                alert("Invalid points selections, please select the points again..");
+                alert("Incorrect points selections, please select the points again..");
                 clearPoints();
             }else if(error.response.status === 500){
                 alert("Unknown error occured, please try again later!");
+            }else if(error.response.status === 423){
+                alert("User account is locked because of 5 wrong attempts, please try again later.");
             }
         });
     },
-    loginByPassword: (data, pwdIncorrectError) => {
+    loginByPassword: (data, pwdIncorrectError, maxAttemptsError) => {
         data = JSON.stringify(data);
         var config = {
         method: 'post',
@@ -107,7 +109,11 @@ const Utilities = {
         .then(function (response) {
             document.write("<h1 class='jumbotron'>Welcome to NYIT</h1>");        
         })
-        .catch(function (error) {                        
+        .catch(function (error) {
+            if(error.response.status === 423){
+                maxAttemptsError();                
+                return;
+            }
             pwdIncorrectError();
         });
     }

@@ -5,12 +5,12 @@ from autopylogger import init_logging
 from flask import Flask, request
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-
+import time
 from config.config import getFirebaseConfig
 from src import constants
 from src.securityUtil import (encryptImages, getDecryptedImage,
                             validateToken)                    
-from src.util import buildResponse, buildResponseWithImgId, cacheImages
+from src.util import buildResponse, buildResponseWithImgId, cacheImages, countTimeAndSendErrorLogin
 import pickle
 
 logger = init_logging(log_name="Gauth-app", log_directory="logsdir")
@@ -55,6 +55,15 @@ class UserRecord(db.Model):
         self.imgId = jsonObj['imgId']
         self.coordHash = jsonObj['coordHash']
 
+class LockedAccounts(db.Model):
+    __tablename__ = 'LockedAccounts'    
+    userName = db.Column('userName', db.String(1000), primary_key=True)
+    lockedTime = db.Column('lockedTime', db.BigInteger)    
+    def __init__(self, userName, lockedTime):
+        super().__init__()
+        self.userName = userName
+        self.lockedTime = lockedTime        
+
 # encryptImages(ImageHashDB, db, False)
 ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
 
@@ -68,26 +77,22 @@ def signup():
         else:
             record = UserRecord(request.json)
             db.session.add(record)
-            db.session.commit()        
+            db.session.commit()
             return buildResponse("Record successfully inserted", 200)
     except:
         return buildResponse("DB Server closed connection..", 500)
     
 
 @app.route('/api/getImage/<image_id>', methods=['POST'])
-def getImage(image_id):    
+def getImage(image_id):
     token = request.args['x-token']
-    if not validateToken(token): 
+    if not validateToken(token):
         logger.warn("Token is Expired")
         return buildResponse("Token Expired!.", 401)
     image_id = int(image_id)
     image_id = image_id % ttlImgs if image_id > ttlImgs-1 else image_id
-    if image_id in imgs.keys():
-        return imgs[image_id]
-    else:
-        imgs[image_id] = getDecryptedImage(ImageHashDB, f"{image_id}.png")
-        return imgs[image_id]
-    
+    return imgs[image_id] if image_id in imgs.keys() else getDecryptedImage(ImageHashDB, f"{image_id}.png")
+
 @app.route('/api/checkIfUserExists/<userName>', methods=['POST'])
 def checkIfUserExists(userName):
     record = UserRecord.query.filter(UserRecord.userName == userName).first()
@@ -99,11 +104,19 @@ def login():
         userName = request.json['userName']
         if checkIfUserExists(userName)[1] == 404:
             return buildResponse("No such user exists", 404)
+        record = LockedAccounts.query.filter(LockedAccounts.userName == userName).first()
+        if record:
+            if int(time.time()) - int(record.lockedTime) < 300:
+                return buildResponse("Your account is temporary locked, please try again after some time.", 423)
+            else:
+                LockedAccounts.query.filter_by(userName=userName).delete()
+                            
         record = UserRecord.query.filter(UserRecord.userName == userName).first()
+        
         if 'password' in request.json.keys():
-            return buildResponse("Successfully logged in.",200) if record.password == str(hashlib.md5(request.json['password'].encode()).digest()) else buildResponse("Invalid password", 403)
+            return buildResponse("Successfully logged in.",200) if record.password == str(hashlib.md5(request.json['password'].encode()).digest()) else countTimeAndSendErrorLogin("Invalid password", 403, record.userName, LockedAccounts, db)
         elif 'coordHash' in request.json.keys():
-            return buildResponse("Successfully logged in.",200) if record.coordHash == request.json['coordHash'] else buildResponse("Invalid coordHash", 403)
+            return buildResponse("Successfully logged in.",200) if record.coordHash == request.json['coordHash'] else countTimeAndSendErrorLogin("Invalid coordHash", 403, record.userName, LockedAccounts, db)
     except:
         buildResponse("Unknown error occured!", 500)
 

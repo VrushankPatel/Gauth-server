@@ -6,7 +6,8 @@ const constants = {
         INVALID_USERNAME: "Invalid Username",
         PASSWORD_MATCH: "Passwords doesn't match",
         USER_NOT_FOUND: "User not found.",
-        INCORRECT_USERNAME_OR_PASSWORD: "Incorrect Username or Password."
+        INCORRECT_USERNAME_OR_PASSWORD: "Incorrect Username or Password.",
+        MAX_ATTEMPTS: "User account is locked because of 5 wrong attempts, please try again later."
     },
     errorMessageTimeout: 3000,
     fireStore: "https://firebasestorage.googleapis.com/v0/b/gauth-x.appspot.com/o/image.jpg?alt=media",

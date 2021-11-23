@@ -152,6 +152,8 @@ class Login extends Component {
         }                
         Utilities.loginByPassword(data, () => {
             this.showError(constants.errors.INCORRECT_USERNAME_OR_PASSWORD)
+        }, () => {
+            this.showError(constants.errors.MAX_ATTEMPTS)
         });
     };
     
