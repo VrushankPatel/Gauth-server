@@ -5,6 +5,7 @@ import pickle
 from . import constants
 import os
 import time
+import hashlib
 
 logger = init_logging(log_name="Gauth-utilities", log_directory="logsdir")
 failAttempts = dict()
@@ -38,13 +39,35 @@ def checkIfPickledObject():
 
 def countTimeAndSendErrorLogin(message, statusCode, userName, LockedAccounts, db):
     if userName in failAttempts.keys():        
-        if failAttempts[userName] >= 5:            
+        if failAttempts[userName] > 4:
+            logger.warning(f"Locking {userName} because of 5 wrong attempts.")
             record = LockedAccounts(userName, int(time.time()))
             db.session.add(record)
             db.session.commit()
             del failAttempts[userName]
         else:            
             failAttempts[userName] += 1
-    else:        
-        failAttempts[userName] = 1    
+            logger.warning(f"Failed attempt(s) of {userName} : {failAttempts[userName]}")
+    else:
+        failAttempts[userName] = 1
+        logger.warning(f"Failed attempt(s) of {userName} : {failAttempts[userName]}")
     return buildResponse(message, statusCode)    
+
+def returnResponseIfPwdPassed(record, encodedPwd, LockedAccounts, db):
+    logger.info(f"{record.userName} wants to login with password.")
+    return buildResponse("Successfully logged in.",200) if record.password == str(hashlib.md5(encodedPwd).digest()) else countTimeAndSendErrorLogin("Invalid password", 403, record.userName, LockedAccounts, db)
+
+def returnResponseIfCoordHashPassed(record, coordHash, LockedAccounts, db):
+    logger.info(f"{record.userName} wants to login with Coordinates.")
+    return buildResponse("Successfully logged in.",200) if record.coordHash == coordHash else countTimeAndSendErrorLogin("Invalid coordHash", 403, record.userName, LockedAccounts, db)
+
+def isUserLocked(LockedAccounts, userName):    
+    record = LockedAccounts.query.filter(LockedAccounts.userName == userName).first()    
+    if record:
+        if int(time.time()) - int(record.lockedTime) < 60:
+            logger.warning(f"{userName} is locked.")
+            return True
+        else:
+            LockedAccounts.query.filter_by(userName=userName).delete()
+    return False
+    

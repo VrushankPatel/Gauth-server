@@ -91,7 +91,7 @@ const Utilities = {
             }else if(error.response.status === 500){
                 alert("Unknown error occured, please try again later!");
             }else if(error.response.status === 423){
-                alert("User account is locked because of 5 wrong attempts, please try again later.");
+                alert(constants.errors.MAX_ATTEMPTS);
             }
         });
     },

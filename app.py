@@ -1,5 +1,4 @@
 import os
-import urllib
 import hashlib
 from autopylogger import init_logging
 from flask import Flask, request
@@ -10,8 +9,7 @@ from config.config import getFirebaseConfig
 from src import constants
 from src.securityUtil import (encryptImages, getDecryptedImage,
                             validateToken)                    
-from src.util import buildResponse, buildResponseWithImgId, cacheImages, countTimeAndSendErrorLogin
-import pickle
+from src.util import buildResponse, buildResponseWithImgId, cacheImages, returnResponseIfPwdPassed, returnResponseIfCoordHashPassed, isUserLocked
 
 logger = init_logging(log_name="Gauth-app", log_directory="logsdir")
 
@@ -101,22 +99,15 @@ def checkIfUserExists(userName):
 @app.route('/api/login', methods=['POST'])
 def login():
     try:
-        userName = request.json['userName']
+        userName = request.json['userName']                
         if checkIfUserExists(userName)[1] == 404:
-            return buildResponse("No such user exists", 404)
-        record = LockedAccounts.query.filter(LockedAccounts.userName == userName).first()
-        if record:
-            if int(time.time()) - int(record.lockedTime) < 300:
-                return buildResponse("Your account is temporary locked, please try again after some time.", 423)
-            else:
-                LockedAccounts.query.filter_by(userName=userName).delete()
-                            
+            return buildResponse("No such user exists", 404)        
+        if isUserLocked(LockedAccounts, userName):
+            return buildResponse("Your account is temporary locked, please try again after some time.", 423)
+                
         record = UserRecord.query.filter(UserRecord.userName == userName).first()
-        
-        if 'password' in request.json.keys():
-            return buildResponse("Successfully logged in.",200) if record.password == str(hashlib.md5(request.json['password'].encode()).digest()) else countTimeAndSendErrorLogin("Invalid password", 403, record.userName, LockedAccounts, db)
-        elif 'coordHash' in request.json.keys():
-            return buildResponse("Successfully logged in.",200) if record.coordHash == request.json['coordHash'] else countTimeAndSendErrorLogin("Invalid coordHash", 403, record.userName, LockedAccounts, db)
+                
+        return returnResponseIfPwdPassed(record, request.json['password'].encode(), LockedAccounts, db) if 'password' in request.json.keys() else returnResponseIfCoordHashPassed(record, request.json['coordHash'], LockedAccounts, db)            
     except:
         buildResponse("Unknown error occured!", 500)
 
