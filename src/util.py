@@ -39,8 +39,8 @@ def checkIfPickledObject():
 
 def countTimeAndSendErrorLogin(message, statusCode, userName, LockedAccounts, db):
     if userName in failAttempts.keys():        
-        if failAttempts[userName] > 4:
-            logger.warning(f"Locking {userName} because of 5 wrong attempts.")
+        if failAttempts[userName] >= 3:
+            logger.warning(f"Locking {userName} because of 3 wrong attempts.")
             record = LockedAccounts(userName, int(time.time()))
             db.session.add(record)
             db.session.commit()
