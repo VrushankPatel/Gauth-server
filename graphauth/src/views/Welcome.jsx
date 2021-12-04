@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Helmet} from "react-helmet";
-import "../static/js/main.min.js";
-import "../static/css/style.css";
+
 class Welcome extends Component {
     render() {
         return (
@@ -119,10 +118,10 @@ class Welcome extends Component {
             </div>
         </footer>
         <Helmet>
-            <script src = "https://gauth-landing-page.web.app/dist/js/main.min.js" type = "text/javascript" />
+            <script src = "https://preview.cruip.com/solid/dist/js/main.min.js" type = "text/javascript" />
             <script src="https://unpkg.com/animejs@3.0.1/lib/anime.min.js"></script>
             <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-            <link rel="stylesheet" href="https://gauth-landing-page.web.app/dist/css/style.css"></link>
+            <link rel="stylesheet" href="https://preview.cruip.com/solid/dist/css/style.css"></link>
         </Helmet>
     </div>
     
