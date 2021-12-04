@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import {Helmet} from "react-helmet";
+import "../static/js/main.min.js";
+import "../static/css/style.css";
 class Welcome extends Component {
     render() {
         return (
@@ -53,7 +55,7 @@ class Welcome extends Component {
                             <div class="feature text-center is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<img src="https://gauth-landing-page.web.app/dist/images/feature-icon-01.svg" alt="Feature 01"/>
+										<img src="https://preview.cruip.com/solid/dist/images/feature-icon-01.svg" alt="Feature 01"/>
                                     </div>
                                     <h4 class="feature-title mt-24">Encrypted Images</h4>
                                     <p class="text-sm mb-0" style={{color: "grey"}}>Images that are being used for graphical authentication are completely encrypted by secure Encryption Algorithms.</p>
@@ -62,7 +64,7 @@ class Welcome extends Component {
 							<div class="feature text-center is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<img src="https://gauth-landing-page.web.app/dist/images/feature-icon-02.svg" alt="Feature 02"/>
+										<img src="https://preview.cruip.com/solid/dist/images/feature-icon-02.svg" alt="Feature 02"/>
                                     </div>
                                     <h4 class="feature-title mt-24">Secure signup</h4>
                                     <p class="text-sm mb-0" style={{color: "grey"}}>Vital information of user data is being stored in completely encrypted format.</p>
@@ -71,7 +73,7 @@ class Welcome extends Component {
                             <div class="feature text-center is-revealing">
                                 <div class="feature-inner">
                                     <div class="feature-icon">
-										<img src="https://gauth-landing-page.web.app/dist/images/feature-icon-03.svg" alt="Feature 03"/>
+										<img src="https://preview.cruip.com/solid/dist/images/feature-icon-03.svg" alt="Feature 03"/>
                                     </div>
                                     <h4 class="feature-title mt-24">Low Latency</h4>
                                     <p class="text-sm mb-0" style={{color: "grey"}}>Even with all these complex encryption algorithms, Gauth can response much faster with efficient decryption mechanisms then expected because of the caching layer.</p>
