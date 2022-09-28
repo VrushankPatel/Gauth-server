@@ -1,7 +1,7 @@
 import os
 import hashlib
 from autopylogger import init_logging
-from flask import Flask, request
+from flask import Flask, request, render_template, send_from_directory
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 import time
@@ -13,7 +13,7 @@ from src.util import buildResponse, buildResponseWithImgId, cacheImages, returnR
 
 logger = init_logging(log_name="Gauth-app", log_directory="logsdir")
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="graphauth/build")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -66,6 +66,22 @@ class LockedAccounts(db.Model):
 ttlImgs = len(os.listdir(constants.IMAGES_ENCRYPTED_DIR))
 
 imgs = cacheImages(ImageHashDB)
+
+@app.route('/<path:path>')
+def send_report(path):
+    return send_from_directory(app.static_folder, path)
+
+@app.route("/")
+def root_ui():
+    return send_from_directory(app.static_folder, 'index.html')
+
+@app.route("/login")
+def login_ui():
+    return root_ui()
+
+@app.route("/signup")
+def signup_ui():
+    return root_ui()
 
 @app.route('/api/signup', methods=['POST'])
 def signup():
